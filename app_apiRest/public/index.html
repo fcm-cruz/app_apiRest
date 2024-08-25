@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>App WordPress</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="page-details"></div>
+
+    <script>
+        const pageId = 2840; // Substitua pelo ID da página desejada
+        const apiUrl = `https://fernandocruzmacedo.com.br/wp-json/wp/v2/posts/${pageId}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(page => {
+                const pageDetailsContainer = document.getElementById('page-details');
+                const pageElement = document.createElement('div');
+                pageElement.innerHTML = `
+                    <div>${page.content.rendered}</div>
+                `;
+                pageDetailsContainer.appendChild(pageElement);
+            })
+            .catch(error => console.error('Erro ao buscar a página:', error));
+    </script>
+</body>
+</html>
