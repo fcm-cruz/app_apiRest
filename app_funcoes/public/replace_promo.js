@@ -3,7 +3,6 @@ document.querySelector('#btn').addEventListener('click', (e) => {
     
     e.preventDefault(); // Evita que a página seja recarregada quando o botão for clicado
 
-    
     let inputs = document.querySelectorAll('#registrarPromos input[type="text"]'); // Seleciona todos os inputs do tipo texto dentro do formulário com id "registrarPromos"
     let array = Array.from(inputs).map(input => input.value); // Converte a NodeList em um array e extrai os valores de cada input
     let formattedArray = []; // Cria um array vazio para armazenar os valores formatados
@@ -17,13 +16,11 @@ document.querySelector('#btn').addEventListener('click', (e) => {
         // Verifica se o array não está vazio após a limpeza
         if (cleanedArray.length > 0) {
             
-            let joinFormatted = cleanedArray.join(''); // Junta os caracteres em uma única string sem separadores
-            let formatted = joinFormatted.slice(0, 4); // Pega os primeiros 4 caracteres da string resultante
+            let formatted = cleanedArray.join('').slice(0, 4); // Pega os primeiros 4 caracteres da string resultante
 
             formattedArray.push(formatted); // Adiciona o valor formatado ao array "formattedArray"
         }
     });
-
     
     let concatenatedString = formattedArray.join('-'); // Concatena todos os itens do "formattedArray" em uma única string, separados por "|"
     
