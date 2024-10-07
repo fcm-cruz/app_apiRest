@@ -8,25 +8,22 @@
 <body>
     <h1>Gerador de promos</h1>
     <form id="registrarPromos" action="assets/replace_promo.js" method="post">
-        <label for="name">Digite uma promo:</label>
-        <input type="text" placeholder="Digite seu nome" id="promoA" minlength="4" maxlength="4" required><br>
+        <label for="promoA">Digite uma promo:</label>
+        <input type="text" name="" id="promoA" minlength="4" maxlength="7" required><br>
 
         <label for="promoB">Digite uma promo:</label>
-        <input type="text" name="" id="promoB" minlength="4" maxlength="4" required><br>
+        <input type="text" name="" id="promoB" minlength="4" maxlength="7" required><br>
 
         <label for="promoC">Digite uma promo:</label>
         <input type="text" name="" id="promoC" minlength="4" maxlength="4" required><br>
 
         <label for="promoD">Digite uma promo:</label>
-        <input type="text" name="" id="promoD" minlength="4" maxlength="4" required><br>
+        <input type="text" name="" id="promoD" minlength="4" maxlength="4" required>
 
         <input type="submit" value="enviar" id="btn">
     </form>
 
     
-    <script src="assets/data.js" type="module"></script>
-    <script src="assets/replace_promo.js" type="module"></script>
-    <!-- <script type="module" src="assets/replace_promoUrl.js"></script> -->
-    <!-- <script src="assets/replace_name.js" type="module"></script> -->
+    <script src="replace_promo.js" type="module"></script>
 </body>
 </html>
