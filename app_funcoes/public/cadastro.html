@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Cadastro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="box"></div>
+    
+    <!-- Formulário com campos para inserir nome e a idade e botão para cadastrar -->
+    <form id="formCadastro">
+        <h1>Ficha de cadastro</h1>
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="nome" required>
+
+        <label for="idade">Idade</label>
+        <input type="number" name="idade" id="idade" required>
+
+        <input type="submit" value="Cadastrar" name="cadastrar" id="cadastrar">
+
+        <div id="botao"></div>
+        
+    </form>  
+    <script src="cadastro.js"></script>
+</body>
+</html>
