@@ -1,32 +1,15 @@
-let gulp = require("gulp");
-let browsersync = require("browser-sync").create();
-let sass = require("gulp-sass")(require("sass"));
+const { watch, series } = require('gulp');
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
 
-// compila o SAA (.scss)
-gulp.task(
-    "sass", 
-    gulp.series(() => {
-        return gulp
-            .src(["src/scss/*.scss"])
-            .pipe(sass())
-            .pipe(gulp.dest("src/css"))
-            .pipe(browsersync.stream());
-    }),
-);
+function css() {
+  // body omitted
+  return gulp.src('src/scss/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('src/css'));
+}
 
-// Servidor que monitora os arquivos .html e scss
-
-gulp.task(
-    "server",
-    gulp.series([], () => {
-        browsersync.init({
-            server: "src",
-        });
-    
-    gulp.watch(["src/scss/*.scss"], gulp.parallel(["sass"]));
-
-    gulp.watch(["src/*.html", "src/css/*.css"]).on("change", gulp.parallel(browsersync.reload));
-    }),
-);
-
-gulp.task("default", gulp.series(["server"]));
+exports.default = function() {
+//   You can use a single task
+    watch('src/scss/*.scss', css)
+};
