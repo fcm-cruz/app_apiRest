@@ -94,31 +94,31 @@ body{
         border: none;
     }
     
-    div.warning{
-        width: 100%;
-        margin-top: 10px;
-        padding: 0.8rem;
+}
+
+div{
+    .warning{
+        width: 350px;
+        padding: 1rem;
         border-radius: 0.6rem;
-        box-sizing: border-box;
         background-color: $secundaryColor;
         color: #000;
         font-size: 1rem;
         text-align: center;
+        position: absolute;
+        top: 10px;
+        right: 10px;
     }
-    
-    div.confirm{
-        width: 100%;
-        margin-top: 10px;
-        padding: 0.8rem;
+    .confirm{
+        width: 350px;
+        padding: 1rem;
         border-radius: 0.6rem;
-        box-sizing: border-box;
         background-color: $fiveth;
         color: #000;
         font-size: 1rem;
-        text-align: left;
-    }
-    
-    div.remove{
-        display: none;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        right: 10px;
     }
 }
