@@ -27,15 +27,29 @@ document.querySelector('#cadastrar').addEventListener('click', (e) => {
             boxMsg.innerHTML = `
                 <div class="confirm">
                     <p>Cadastro realizado com sucesso!</p>
-                    <p>Nome: ${array[0]}</p>
-                    <p>Idade: ${array[1]}</p>
                 </div>`;
     
             console.log(`Status ok: Formulário de cadastro preenchido.`);
 
         }
+
+        fadeOutEffect(boxMsg.querySelector('div'))
     }       
     
     cadastrarFuncionario();
 
 });
+
+function fadeOutEffect(element) {
+    let opacity = 1;
+    const fadeInterval = setInterval(() =>{
+        if(opacity > 0){
+            opacity -= 0.05;
+            element.style.opacity = opacity;
+        } else {
+            clearInterval(fadeInterval);
+            element.remove();
+        }
+
+    }, 100);
+}
