@@ -9,18 +9,18 @@ Siga os passos abaixo para instalar as dependências e iniciar os serviços da a
 ### 1. Instalar Dependências
 No terminal, execute o seguinte comando para instalar todas as dependências necessárias:
 
-npm install
+    - npm install
 
-###2. Iniciar o Servidor Express
+### 2. Iniciar o Servidor Express
 Para iniciar o servidor Express na porta 4000 e monitorar automaticamente os serviços:
 
-nodemon server.js
+    - nodemon server.js
 
 ### 3. Executar o Gulp
 
 Para iniciar o Gulp e monitorar as alterações nos arquivos SASS e compilar o CSS automaticamente:
 
-gulp
+    - gulp
 
 O Gulp ficará monitorando e atualizando o CSS gerado a partir dos arquivos SASS sempre que houver modificações.
 
