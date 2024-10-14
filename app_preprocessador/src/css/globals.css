@@ -37,7 +37,7 @@ body {
   border-radius: 0.6rem;
   font-size: 1rem;
 }
-#formCadastro input[type=number] {
+#formCadastro input[type=email] {
   box-sizing: border-box;
   line-height: 1.5rem;
   margin-bottom: 1.3rem;

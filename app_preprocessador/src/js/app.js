@@ -6,7 +6,7 @@ document.querySelector('#cadastrar').addEventListener('click', (e) => {
 
     function cadastrarFuncionario(){
         // Selecionar todos os inputs de texto e número
-        let inputs = document.querySelectorAll('#formCadastro input[type="text"], input[type="number"]');
+        let inputs = document.querySelectorAll('#formCadastro input[type="text"], input[type="email"]');
         let array = Array.from(inputs).map(input => input.value);
         let boxMsg = document.querySelector('#box');
 
