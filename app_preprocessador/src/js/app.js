@@ -2,50 +2,40 @@
 document.querySelector('#cadastrar').addEventListener('click', (e) => {
     e.preventDefault();
 
-    // Cadastrar pessoa
+    // Cadastrar funcionário
 
-    function pessoas(){
-
+    function cadastrarFuncionario(){
+        // Selecionar todos os inputs de texto e número
         let inputs = document.querySelectorAll('#formCadastro input[type="text"], input[type="number"]');
-
         let array = Array.from(inputs).map(input => input.value);
-
         let boxMsg = document.querySelector('#box');
 
-        let arr = [];
-
-        array.forEach((element) => {
+        // Verifica se todos os campos estão preenchidos
+        const allFieldsFiltred = array.every(value => value !== "");
             
-            if(element == ""){
-            
-            boxMsg.innerHTML = `<div class="warning"><p>Preencha todos os campos!</p></div>`;   
+        if (!allFieldsFiltred){
+            // Mensagem de erro
+            boxMsg.innerHTML = `
+                <div class="warning">
+                    <p>Preencha todos os campos!</p>
+                </div>`;   
             
             console.error(`Erro: Formulário de cadastro não preenchido.`);
-            
-            }
-            else{
-
-                arr.push(element);
-
-                boxMsg.innerHTML = `<div class="confirm">
-                        <p>Cadastro realizado com sucesso!</p>
-                        <p>Nome: ${arr[0]}</p><p>Idade: ${arr[1]}</p>
-                    </div>`;
         
-                console.log(`Status ok: Formulário de cadastro preenchido.`);
-
-                // setInterval(() => {
-
-                //     boxMsg.classList.remove('confirm').
-                //     boxMsg.classList.add('remove')
-
-                // }, 2000);
-            }
-        }      
-        
-        );
-    }
+        } else {
+            // Mensagem de sucesso
+            boxMsg.innerHTML = `
+                <div class="confirm">
+                    <p>Cadastro realizado com sucesso!</p>
+                    <p>Nome: ${array[0]}</p>
+                    <p>Idade: ${array[1]}</p>
+                </div>`;
     
-    pessoas();
+            console.log(`Status ok: Formulário de cadastro preenchido.`);
 
-})
+        }
+    }       
+    
+    cadastrarFuncionario();
+
+});
