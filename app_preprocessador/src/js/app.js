@@ -6,6 +6,7 @@ document.querySelector('#cadastrar').addEventListener('click', (e) => {
 
     function cadastrarFuncionario(){
         // Selecionar todos os inputs de texto e número
+        let form = document.querySelector('#formCadastro');
         let inputs = document.querySelectorAll('#formCadastro input[type="text"], input[type="email"]');
         let array = Array.from(inputs).map(input => input.value);
         let boxMsg = document.querySelector('#box');
@@ -20,7 +21,7 @@ document.querySelector('#cadastrar').addEventListener('click', (e) => {
                     <p>Preencha todos os campos!</p>
                 </div>`;   
             
-            console.error(`Erro: Formulário de cadastro não preenchido.`);
+            // console.error(`Erro: Formulário de cadastro não preenchido.`);
         
         } else {
             // Mensagem de sucesso
@@ -30,6 +31,10 @@ document.querySelector('#cadastrar').addEventListener('click', (e) => {
                 </div>`;
     
             console.log(`Status ok: Formulário de cadastro preenchido.`);
+
+            form.reset();
+
+            logado();
 
         }
 
@@ -52,4 +57,8 @@ function fadeOutEffect(element) {
         }
 
     }, 100);
+}
+
+function logado(){
+    window.location = "user/dashboard.html";
 }
